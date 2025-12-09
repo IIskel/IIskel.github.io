@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>IIskel — Developer Portfolio</title>
+  <meta name="description" content="IIskel — Developer portfolio: projects, skills, and contact.">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#94a3b8; --accent1:#7c3aed; --accent2:#06b6d4; --glass: rgba(255,255,255,0.04);
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#071124 60%);color:#e6eef8}
+    .wrap{max-width:1100px;margin:32px auto;padding:28px}
+
+    header{display:flex;align-items:center;gap:20px}
+    .avatar{width:96px;height:96px;border-radius:16px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:28px;color:white;box-shadow:0 6px 22px rgba(2,6,23,0.6)}
+    h1{margin:0;font-size:28px}
+    p.lead{margin:6px 0;color:var(--muted)}
+
+    .hero{display:grid;grid-template-columns:1fr 340px;gap:28px;margin-top:22px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:18px;box-shadow:0 6px 30px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+
+    .intro{min-height:180px}
+    .roles{color:var(--accent2);font-weight:600}
+
+    .cta{display:flex;gap:12px;margin-top:16px}
+    .btn{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600;box-shadow:0 8px 30px rgba(12,8,32,0.6)}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--accent2)}
+
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px}
+    .proj-card{padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.03)}
+    .proj-card h3{margin:6px 0 4px}
+    .proj-card p{margin:0;color:var(--muted);font-size:14px}
+
+    .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .pill{background:var(--glass);padding:8px 10px;border-radius:999px;color:var(--muted);font-weight:600;font-size:13px}
+
+    footer{margin-top:30px;padding:18px;color:var(--muted);font-size:14px;text-align:center}
+
+    /* responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .projects{grid-template-columns:1fr}
+    }
+
+    /* subtle animation */
+    .glow{position:relative}
+    .glow::after{content:'';position:absolute;inset:-2px;border-radius:12px;background:linear-gradient(90deg,rgba(124,58,237,0.12),rgba(6,182,212,0.12));z-index:-1;filter:blur(30px);opacity:0;transition:opacity .35s}
+    .glow:hover::after{opacity:1}
+
+    /* code sample */
+    pre{background:linear-gradient(180deg, rgba(0,0,0,0.15), rgba(255,255,255,0.02));padding:12px;border-radius:10px;color:#dff7ff;overflow:auto;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono', monospace;font-size:13px}
+
+    .tagline{display:flex;align-items:center;gap:10px}
+    .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(90deg,var(--accent1),var(--accent2));box-shadow:0 6px 18px rgba(124,58,237,0.18)}
+
+    .socials{display:flex;gap:10px;margin-top:12px}
+    .socials a{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,0.02);text-decoration:none;color:inherit}
+
+    /* type effect */
+    .typing{border-right:2px solid rgba(255,255,255,0.14);padding-right:6px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="avatar">II</div>
+      <div>
+        <h1>IIskel</h1>
+        <p class="lead">Developer · Maker · Curious mind. I build web apps, developer tools, and experiment with design & performance.</p>
+        <div class="socials" aria-hidden="false">
+          <a href="https://github.com/IIskel" title="GitHub" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <!-- GitHub Mark -->
+            <svg width="18" height="18" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          </a>
+          <a href="https://twitter.com/" title="Twitter" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M22 5.92c-.66.3-1.35.5-2.08.59a3.63 3.63 0 001.6-2 7.14 7.14 0 01-2.3.88 3.56 3.56 0 00-6.06 3.25A10.08 10.08 0 013 4.87a3.56 3.56 0 001.1 4.75c-.55 0-1.07-.17-1.52-.42v.04a3.56 3.56 0 002.85 3.49c-.2.06-.4.09-.62.09-.15 0-.3-.01-.45-.04a3.57 3.57 0 003.33 2.48A7.14 7.14 0 012 19.54a10.06 10.06 0 005.46 1.6c6.55 0 10.14-5.43 10.14-10.14v-.46A7.2 7.2 0 0022 5.92z"/></svg>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="card intro glow">
+        <div class="tagline">
+          <div class="dot" aria-hidden="true"></div>
+          <div>
+            <div style="display:flex;align-items:center;gap:8px"><strong style="font-size:16px">Hi, I’m IIskel</strong><span style="color:var(--muted);font-size:13px">— building thoughtful, fast web experiences</span></div>
+            <div style="margin-top:10px;font-size:20px">I design and code <span class="roles typing" id="roles">web apps</span></div>
+          </div>
+        </div>
+
+        <p style="color:var(--muted);margin-top:12px">I focus on performant front-end engineering, usable interfaces, and small tools that make developers' lives easier. I love experimenting with modern web APIs and progressive enhancement.</p>
+
+        <div class="cta">
+          <a class="btn" href="#projects">See projects</a>
+          <a class="btn ghost" href="https://github.com/IIskel" target="_blank" rel="noopener noreferrer">View GitHub</a>
+        </div>
+
+        <div style="margin-top:14px">
+          <pre><code>// Favorite setup
+npm init -y
+npm i vite eslint prettier
+</code></pre>
+        </div>
+      </div>
+
+      <aside>
+        <div class="card" style="margin-bottom:14px">
+          <h3 style="margin:0 0 8px 0">Skills</h3>
+          <div class="skills">
+            <span class="pill">JavaScript</span>
+            <span class="pill">TypeScript</span>
+            <span class="pill">React</span>
+            <span class="pill">Node.js</span>
+            <span class="pill">CSS / Tailwind</span>
+            <span class="pill">Git</span>
+            <span class="pill">DevOps</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="margin:0 0 8px 0">Contact</h3>
+          <p style="color:var(--muted);margin:0 0 8px 0">For collabs or questions, open an issue on GitHub or reach out via <a href="mailto:hello@iiskel.dev" style="color:var(--accent2);text-decoration:none">email</a>.</p>
+          <a class="btn" href="mailto:hello@iiskel.dev">Email me</a>
+        </div>
+      </aside>
+    </section>
+
+    <section id="projects" style="margin-top:26px">
+      <h2 style="margin:0 0 10px 0">Selected projects</h2>
+      <div class="projects">
+        <article class="proj-card glow">
+          <h3><a href="https://github.com/IIskel/my-app" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none">My App</a></h3>
+          <p>Opinionated starter for fast, accessible web apps — includes Vite, TypeScript, and CI.</p>
+        </article>
+
+        <article class="proj-card glow">
+          <h3><a href="https://github.com/IIskel/dev-tools" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none">Dev Tools</a></h3>
+          <p>Small CLI utilities and scripts to automate repetitive tasks and speed up development workflows.</p>
+        </article>
+
+        <article class="proj-card glow">
+          <h3><a href="https://github.com/IIskel/portfolio" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none">Portfolio</a></h3>
+          <p>A static site built with a focus on performance and semantic HTML. Template for personal sites.</p>
+        </article>
+
+        <article class="proj-card glow">
+          <h3><a href="https://github.com/IIskel/experimental" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none">Experimental</a></h3>
+          <p>Side projects exploring WebRTC, WebGPU, and other modern web platform APIs.</p>
+        </article>
+      </div>
+    </section>
+
+    <section style="margin-top:26px" aria-label="More about me">
+      <div class="card">
+        <h2 style="margin-top:0">About</h2>
+        <p style="color:var(--muted)">I enjoy building products that solve real problems, and I try to keep things simple. Outside of code I tinker with generative art and music synthesis. This site is a thin, fast, and accessible entry point — built to load quickly and be easy to maintain.</p>
+        <div style="margin-top:12px;display:flex;gap:12px;flex-wrap:wrap">
+          <a class="pill" href="#projects">Featured work</a>
+          <a class="pill" href="https://github.com/IIskel" target="_blank" rel="noopener noreferrer">Open source</a>
+          <a class="pill" href="#" onclick="alert('Replace this link with your resume or blog')">Resume</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Built by <strong>IIskel</strong> · <a href="https://github.com/IIskel/IIskel.github.io" target="_blank" rel="noopener noreferrer" style="color:var(--accent2);text-decoration:none">Source</a>
+    </footer>
+  </div>
+
+  <script>
+    // small typed-roles effect
+    const roles = ['web apps', 'UI components', 'developer tools', 'performant sites', 'experimental APIs'];
+    let i = 0, j = 0, forward = true;
+    const el = document.getElementById('roles');
+    function tick(){
+      const word = roles[i];
+      if(forward){
+        el.textContent = word.slice(0, j+1);
+        j++;
+        if(j === word.length){ forward=false; setTimeout(tick,1200); return }
+      } else {
+        el.textContent = word.slice(0, j-1);
+        j--;
+        if(j===0){ forward=true; i=(i+1)%roles.length }
+      }
+      setTimeout(tick, 80 + Math.random()*40);
+    }
+    setTimeout(tick,350);
+  </script>
+
+</body>
+</html>
